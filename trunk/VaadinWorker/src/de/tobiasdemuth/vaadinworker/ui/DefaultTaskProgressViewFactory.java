@@ -15,6 +15,8 @@ import de.tobiasdemuth.vaadinworker.VaadinWorker;
 public final class DefaultTaskProgressViewFactory implements
 		TaskProgressViewFactory {
 	
+	private static final long serialVersionUID = 1755490715409830690L;
+	
 	private String cancelCaption = "Cancel";
 	
 	public void setCancelCaption(String cancelCaption) {
