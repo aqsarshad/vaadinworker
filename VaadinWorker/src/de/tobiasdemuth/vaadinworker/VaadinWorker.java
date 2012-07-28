@@ -195,7 +195,12 @@ public abstract class VaadinWorker implements Runnable {
 	
 	public final void run() {
 		try {
+			synchronized(app) {
+				initUI();
+			}
+			
 			runInBackground();
+			
 			synchronized(app) {
 				updateUI();
 			}
@@ -204,6 +209,15 @@ public abstract class VaadinWorker implements Runnable {
 		catch(Exception e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
+	}
+	
+	/**
+	 * If you need to do any UI-initialization-work prior to starting the
+	 * long-running task, you can do it here. The method will be called
+	 * inside a synchronized block.
+	 */
+	public void initUI() {
+		// Empty for backwards compatibility
 	}
 	
 	/**

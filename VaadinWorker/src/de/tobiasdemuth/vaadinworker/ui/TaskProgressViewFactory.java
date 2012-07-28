@@ -1,5 +1,7 @@
 package de.tobiasdemuth.vaadinworker.ui;
 
+import java.io.Serializable;
+
 import com.vaadin.ui.Component;
 
 import de.tobiasdemuth.vaadinworker.VaadinWorker;
@@ -12,7 +14,7 @@ import de.tobiasdemuth.vaadinworker.VaadinWorker;
  * @see de.tobiasdemuth.vaadinworker.ui.DefaultTaskProgressViewFactory
  * @author Tobias Demuth &lt;mailto:myself@tobias-demuth.de&gt;
  */
-public interface TaskProgressViewFactory {
+public interface TaskProgressViewFactory extends Serializable {
 	
 	/**
 	 * This method is called in order to get a view for the overgiven 
